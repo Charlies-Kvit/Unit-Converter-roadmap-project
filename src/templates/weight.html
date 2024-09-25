@@ -1,10 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block content %}
+
+{% if message == None %}
+<form action="" method="GET" name="len-form">
+    <div class="len-form">
+        <label for="value">Enter the weight to convert</label>
+        <input type="text" name="value" id="value" required />
+    </div>
+    <div class="len-form">
+        <label for="unit_from">Unit to convert from</label>
+        <select id="unit_from" name="unit_from">
+            <option value="mg">milligram</option>
+            <option value="gr">gram</option>
+            <option value="kg">kilogram</option>
+            <option value="ounce">ounce</option>
+            <option value="pound">pound</option>
+        </select>
+    </div>
+
+    <div class="len-form">
+        <label for="unit_to">Unit to convert to</label>
+        <select id="unit_to" name="unit_to">
+            <option value="mg">milligram</option>
+            <option value="gr">gram</option>
+            <option value="kg">kilogram</option>
+            <option value="ounce">ounce</option>
+            <option value="pound">pound</option>
+        </select>
+    </div>
+    <div class="len-form">
+        <input type="submit" value="Convert" />
+    </div>
+</form>
+{% else %}
+<form action="http://127.0.0.1:8080/weight">
+    <p>Result of your calculation</p>
+    <p>{{ message }}</p>
+    <input type="submit" value="Reset">
+</form>
+{% endif %}
+
+{% endblock %}
