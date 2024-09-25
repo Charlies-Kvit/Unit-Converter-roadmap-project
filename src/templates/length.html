@@ -11,28 +11,28 @@
     <div class="len-form">
         <label for="unit_from">Unit to convert from</label>
         <select id="unit_from" name="unit_from">
-            <option value="ml">millimeter</option>
+            <option value="mm">millimeter</option>
             <option value="cm">centimeter</option>
             <option value="meter">meter</option>
             <option value="km">kilometer</option>
             <option value="inch">inch</option>
-            <option value="foot">foot</option>
+            <option value="ft">foot</option>
             <option value="yard">yard</option>
-            <option value="mile">mile</option>
+            <option value="ml">mile</option>
         </select>
     </div>
 
     <div class="len-form">
         <label for="unit_to">Unit to convert to</label>
-        <select id="unit_to" name="unit_from">
-            <option value="ml">millimeter</option>
+        <select id="unit_to" name="unit_to">
+            <option value="mm">millimeter</option>
             <option value="cm">centimeter</option>
             <option value="meter">meter</option>
             <option value="km">kilometer</option>
             <option value="inch">inch</option>
             <option value="foot">foot</option>
             <option value="yard">yard</option>
-            <option value="mile">mile</option>
+            <option value="ml">mile</option>
         </select>
     </div>
     <div class="len-form">
@@ -40,9 +40,11 @@
     </div>
 </form>
 {% else %}
-<p>Result of your calculation</p>
-<p>{{ message }}</p>
-<input type="reset" value="Reset">
+<form action="http://127.0.0.1:8080">
+    <p>Result of your calculation</p>
+    <p>{{ message }}</p>
+    <input type="submit" value="Reset">
+</form>
 {% endif %}
 
 {% endblock %}
