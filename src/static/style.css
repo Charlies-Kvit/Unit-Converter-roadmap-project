@@ -1,0 +1,21 @@
+li {
+    display: inline-block;
+}
+
+form.len-form {
+  display: table;
+}
+
+div.len-form {
+  display: table-row;
+}
+
+label,
+input {
+  display: table-cell;
+  margin-bottom: 10px;
+}
+
+label {
+  padding-right: 10px;
+}
